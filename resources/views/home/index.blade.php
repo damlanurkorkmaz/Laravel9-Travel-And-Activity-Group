@@ -2,7 +2,7 @@
 
 @extends('layouts.frontbase')
 
-@section('title', 'Laravel 9 Travel And Activity Group web site')
+@section('title', 'Laravel 9 Travel And Activity Group Website')
 
 @section('description')
     Geziyoruz
