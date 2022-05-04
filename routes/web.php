@@ -27,6 +27,11 @@ Route::get('/test/{id}', [HomeController::class, 'test'])-> where ('id','[0-9]+'
 
 Route::get('/aboutus', [HomeController::class, 'aboutus'])-> name('aboutus');
 
+// admin anasayfa
+
+Route::get('/admin', [App\Http\Controllers\admin\HomeController::class, 'index'])-> name('adminhome');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
