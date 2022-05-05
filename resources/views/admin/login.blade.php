@@ -34,14 +34,16 @@
                         <form  action="{{route('admin_logincheck')}}" method="post" class="pt-3">
                             @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="e-mail">
+                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="e-mail">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="password">
+                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="password">
                             </div>
                             <div class="mt-3">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="http://127.0.0.1:8000/admin">SIGN IN</a>
+
+                            <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"> SIGN IN </button>
                             </div>
+
                             <div class="my-2 d-flex justify-content-between align-items-center">
                                 <div class="form-check">
                                     <label class="form-check-label text-muted">

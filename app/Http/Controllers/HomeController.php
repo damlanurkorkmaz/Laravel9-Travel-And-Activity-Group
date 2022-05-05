@@ -26,6 +26,7 @@ class HomeController extends Controller
 
     public function logincheck(Request $request)
         {
+
             if($request->isMethod('post'))
             {
                 $credentials = $request->only('email','password');
@@ -42,11 +43,11 @@ class HomeController extends Controller
 
             }
 
-            else{
-
-                return  view('admin.login');
-            }
+            else return  view('admin.login');
         }
+
+
+
     public function logout(Request $request){
 
         Auth::logout();
