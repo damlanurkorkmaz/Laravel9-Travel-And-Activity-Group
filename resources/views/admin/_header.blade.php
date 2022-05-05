@@ -78,10 +78,17 @@
                         <i class="ti-settings text-primary"></i>
                         Settings
                     </a>
+
                     <a class="dropdown-item">
                         <i class="ti-power-off text-primary"></i>
                         Logout
                     </a>
+                    <div class="info">
+                        @auth
+                            <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                            <a href="{{route('admin_logout')}}" class="d-block"> Logout</a>
+                        @endauth
+                    </div>
                 </div>
             </li>
             <li class="nav-item nav-settings d-none d-lg-flex">
