@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
-
+use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,12 +42,17 @@ Route::post('/admin/logincheck', [App\Http\Controllers\admin\HomeController::cla
 Route::get('/admin/logout', [App\Http\Controllers\admin\HomeController::class, 'logout'])-> name('admin_logout');
 
 // admin category routes
-Route::get('/admin/category', [\App\Http\Controllers\admin\CategoryController::class, 'index'])-> name('admin_category');
+Route::get('/admin/category', [AdminCategoryController::class, 'index'])-> name('admin_category');
 
-Route::get('/admin/category/create', [\App\Http\Controllers\admin\CategoryController::class, 'create'])-> name('admin_category_create');
+Route::get('/admin/category/create', [AdminCategoryController::class, 'create'])-> name('admin_category_create');
 
-Route::post('/admin/category/store', [\App\Http\Controllers\admin\CategoryController::class, 'store'])-> name('admin_category_store');
+Route::post('/admin/category/store', [AdminCategoryController::class, 'store'])-> name('admin_category_store');
 
+Route::get('/admin/category/edit/{id}', [AdminCategoryController::class, 'edit'])-> name('admin_category_edit');
+
+Route::post('/admin/category/update/{id}', [AdminCategoryController::class, 'update'])-> name('admin_category_update');
+
+Route::get('/admin/category/show/{id}', [AdminCategoryController::class, 'show'])-> name('admin_category_show');
 
 
 
