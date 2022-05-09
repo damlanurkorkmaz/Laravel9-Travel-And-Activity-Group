@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\HomeController as AdminHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,15 +28,28 @@ Route::get('/test/{id}', [HomeController::class, 'test'])-> where ('id','[0-9]+'
 
 Route::get('/aboutus', [HomeController::class, 'aboutus'])-> name('aboutus');
 
+
 // admin anasayfa
 
-Route::get('/admin', [App\Http\Controllers\admin\HomeController::class, 'index'])-> name('adminhome')-> middleware('auth');
+Route::get ('/admin', [AdminHomeController::class, 'index'])-> name('adminhome');
 
-Route::get('/admin/login', [HomeController::class, 'login'])-> name('admin_login');
+// admin login
 
-Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])-> name('admin_logincheck');
+Route::get('/admin/login', [AdminHomeController::class, 'login'])-> name('admin_login');
 
-Route::get('/admin/logout', [HomeController::class, 'logout'])-> name('admin_logout');
+Route::post('/admin/logincheck', [App\Http\Controllers\admin\HomeController::class, 'logincheck'])-> name('admin_logincheck');
+
+Route::get('/admin/logout', [App\Http\Controllers\admin\HomeController::class, 'logout'])-> name('admin_logout');
+
+// admin category routes
+Route::get('/admin/category', [\App\Http\Controllers\admin\CategoryController::class, 'index'])-> name('admin_category');
+
+Route::get('/admin/category/create', [\App\Http\Controllers\admin\CategoryController::class, 'create'])-> name('admin_category_create');
+
+Route::post('/admin/category/store', [\App\Http\Controllers\admin\CategoryController::class, 'store'])-> name('admin_category_store');
+
+
+
 
 Route::middleware([
     'auth:sanctum',

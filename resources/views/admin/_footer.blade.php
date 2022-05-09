@@ -1,11 +1,6 @@
-<!-- partial:partials/_footer.html -->
-<footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-    </div>
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
-    </div>
-</footer>
-
+<!-- Core Scripts - Include with every page -->
+<script src="{{asset('assets')}}/admin/plugins/jquery-1.10.2.js"></script>
+<script src="{{asset('assets')}}/admin/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('assets')}}/admin/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="{{asset('assets')}}/admin/plugins/pace/pace.js"></script>
+<script src="{{asset('assets')}}/admin/scripts/siminta.js"></script>
