@@ -9,17 +9,24 @@
     <!--  page-wrapper -->
     <div id="page-wrapper">
 
+
         <div class="row">
             <!-- Page Header -->
+            <br>
+            <br>
+            <br>
             <div class="col-lg-12">
-                <h1 class="page-header">Category List</h1>
+                <a href="/admin/category/create" class="btn btn-outline btn-primary">Add Category</a><br>
+                <br>
+
             </div>
             <!--End Page Header -->
         </div>
 
 
         <div class="panel-heading" style="background-color: whitesmoke">
-           Category List
+
+            <h3>Category List</h3>
             <hr>
         </div>
         <div class="panel-body"style="background-color: whitesmoke">
