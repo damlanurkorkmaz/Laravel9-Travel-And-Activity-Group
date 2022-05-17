@@ -25,8 +25,18 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Category Elements</h4>
-                            <form class="forms-sample" action="/admin/category/update/{{$data->id}}" method="post">
+                            <form class="forms-sample" action="/admin/category/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                <div class="form-group">
+                                    <label>Parent Category</label>
+                                    <select class="form-control select2" name="parent_id">
+                                        <option value="0" selected="selected"> Main Category</option>
+                                        @foreach($datalist as $rs)
+                                            <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>
+                                                {{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title)}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputUsername1">Title</label>
                                     <input type="text" class="form-control" name="title" value="{{$data->title}}">
@@ -44,12 +54,9 @@
 
                                 <br>
                                 <div class="input-group col-xs-12">
-                                    <input type="name" class="form-control file-upload-info" name="image" disabled="" placeholder="Upload Image">
-                                    <span class="input-group-append">
-                                         <br>
-                                         <input type="file" name="img[]" class="file-upload-default"><br>
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
+                                    <input type="name" class="form-control file-upload-info" name="image"  placeholder="Upload Image"><br>
+                                    <input type="file" name="image" class="file-upload-default">
+
                                 </div>
 <br>
 
@@ -62,7 +69,7 @@
                                     </select>
                                 </div>
                                 <div class="card-footer">
-                                    <button class="btn btn-primary mr-2" type="submit"> Update Data</button>
+                                    <button class="btn btn-primary mr-2" type="submit"> Save</button>
                                 </div>
 
                             </form>

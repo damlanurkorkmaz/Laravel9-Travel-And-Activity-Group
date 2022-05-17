@@ -29,15 +29,15 @@
             <h3>Category List</h3>
             <hr>
         </div>
-        <div class="panel-body"style="background-color: whitesmoke">
+        <div class="panel-body"style="background-color: whitesmoke"  >
             <div class="table-responsive">
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered" >
                     <thead>
                     <tr>
-                        <th>#</th>
+
                         <th>ID</th>
-                        <th>Keyword</th>
-                        <th>Description</th>
+                        <th>Parent</th>
+                        <th>Title</th>
                         <th>Image</th>
                         <th>Status</th>
                         <th style="width: 40 px">Edit</th>
@@ -49,14 +49,19 @@
                     @foreach($data as $rs)
                     <tr>
                         <td>{{$rs->id}}</td>
+                        <td>{{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title)}}</td>
                         <td>{{$rs->title}}</td>
-                        <td>{{$rs->keywords}}</td>
-                        <td>{{$rs->description}}</td>
-                        <td>{{$rs->image}}</td>
+
+                        <td>
+                            @if($rs->image)
+                            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                            @endif
+                        </td>
                         <td>{{$rs->status}}</td>
                         <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-primary">Edit</a> </td>
                         <td><a href="/admin/category/show/{{$rs->id}}"  class="btn btn-success">Show</a> </td>
-                        <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-danger">Delete</a> </td>
+                        <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-danger"
+                            onclick="return confirm('Category will be deleting. Are you sure?')">Delete</a> </td>
                     </tr>
 
                     @endforeach
