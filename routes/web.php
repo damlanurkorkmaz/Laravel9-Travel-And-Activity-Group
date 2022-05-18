@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
@@ -48,9 +49,25 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])-> name('aboutus');
 
         Route::post('/admin/category/update/{id}', [AdminCategoryController::class,'update'])->name('admin_category_update');
 
-        Route::post('/admin/category/destroy/{id}',  [AdminCategoryController::class,'destroy'])->name('admin_category_destroy');
+        Route::get('/admin/category/destroy/{id}',  [AdminCategoryController::class,'destroy'])->name('admin_category_destroy');
 
         Route::get('/admin/category/show/{id}',  [AdminCategoryController::class,'show'])->name('admin_category_show');
+
+
+// admin product  routes
+Route::get('/admin/product', [AdminProductController::class,'index'] )->name('admin_product');
+
+Route::get('/admin/product/create', [AdminProductController::class,'create'] )->name('admin_product_create');
+
+Route::post('/admin/product/store', [AdminProductController::class,'store'])->name('admin_product_store');
+
+Route::get('/admin/product/edit/{id}', [AdminProductController::class,'edit'])->name('admin_product_edit');
+
+Route::post('/admin/product/update/{id}', [AdminProductController::class,'update'])->name('admin_product_update');
+
+Route::get('/admin/product/destroy/{id}',  [AdminProductController::class,'destroy'])->name('admin_product_destroy');
+
+Route::get('/admin/product/show/{id}',  [AdminProductController::class,'show'])->name('admin_product_show');
 
 
 // admin login
