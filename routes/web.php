@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\admin\AdminProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\admin\AdminProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

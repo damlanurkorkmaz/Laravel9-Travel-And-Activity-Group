@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Category: '.$data->title)
+@section('title', 'Edit Product: '.$data->title)
 
 <!--  wrapper -->
 <div id="wrapper">
@@ -12,7 +12,7 @@
         <div class="row">
             <!-- Page Header -->
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Category: {{$data->title}} </h1>
+                <h1 class="page-header">Edit Product: {{$data->title}} </h1>
             </div>
             <!--End Page Header -->
         </div>
@@ -24,15 +24,14 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Category Elements</h4>
-                            <form class="forms-sample" action="/admin/category/update/{{$data->id}}" method="post" enctype="multipart/form-data">
+                            <h4 class="card-title">Product Elements</h4>
+                            <form class="forms-sample" action="/admin/product/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>Parent Category</label>
                                     <select class="form-control select2" name="parent_id">
-                                        <option value="0" selected="selected"> Main Category</option>
                                         @foreach($datalist as $rs)
-                                            <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>
+                                            <option value="{{$rs->id}}" @if($rs->id==$data->category_id) selected="selected" @endif>
                                                 {{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title)}}</option>
                                         @endforeach
                                     </select>
@@ -49,7 +48,10 @@
                                     <label for="exampleInputUsername1">Description</label>
                                     <input type="text" class="form-control" name="description" value="{{$data->description}}">
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Detail</label>
+                                    <input type="text" class="form-control" name="detail" value="{{$data->detail}}">
+                                </div>
                                 <label>Image</label>
 
                                 <br>
@@ -58,6 +60,12 @@
                                     <input type="file" name="image" class="file-upload-default">
 
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">City</label>
+                                    <input type="text" class="form-control" name="city" value="{{$data->city}}">
+                                </div>
+
+
 <br>
 
                                 <div class="form-group">
@@ -69,7 +77,7 @@
                                     </select>
                                 </div>
                                 <div class="card-footer">
-                                    <button class="btn btn-primary mr-2" type="submit"> Save</button>
+                                    <button class="btn btn-primary mr-2" type="submit"> Update Data</button>
                                 </div>
 
                             </form>

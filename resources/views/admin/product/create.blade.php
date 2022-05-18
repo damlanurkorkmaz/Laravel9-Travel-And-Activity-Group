@@ -27,10 +27,10 @@
 
 
 
-                            <h4 class="card-title">Category Elements</h4>
+                            <h4 class="card-title">Product Elements</h4>
 
 
-                            <form class="forms-sample" action="/admin/category/store" method="post" enctype="multipart/form-data">
+                            <form class="forms-sample" action="/admin/product/store" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>Parent Category</label>
@@ -53,7 +53,6 @@
                                     <label for="exampleInputUsername1">Description</label>
                                     <input type="text" class="form-control" name="description" placeholder="Description">
                                 </div>
-
                                 <label>Image</label>
 
                                 <br>
@@ -61,12 +60,17 @@
 
                                     <input type="name" class="form-control file-upload-info" name="image" placeholder="Upload Image">
                                     <input type="file" name="image" class="file-upload-default">
-                                        <br>
-
                                 </div>
-<br>
-
                                 <div class="form-group">
+                                    <label for="exampleInputUsername1">Detail</label>
+                                    <input type="text" class="form-control" name="detail" placeholder="Detail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">City</label>
+                                    <input type="text" class="form-control" name="city" placeholder="City">
+                                </div>
+
+                            <div class="form-group">
                                     <label for="exampleFormControlSelect3">Status</label>
                                     <select class="form-control form-control-sm" name="status">
                                         <option>True</option>

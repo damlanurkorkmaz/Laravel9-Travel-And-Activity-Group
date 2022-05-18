@@ -47,7 +47,7 @@
                 <!-- second-level-items -->
             </li>
             <li>
-                <a href="/admin/content"><i class="fa fa-clipboard"></i> Contents</a>
+                <a href="/admin/product"><i class="fa fa-clipboard"></i> Products</a>
             </li>
             <li>
                 <a href="/admin/faq"><i class="fa fa-question fa-fw"></i> FAQ</a>

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Show Category: '.$data->title)
+@section('title', 'Show Product: '.$data->title)
 
 <!--  wrapper -->
 <div id="wrapper">
@@ -15,8 +15,8 @@
                 <br>
                 <br>
                 <br>
-                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-outline btn-success">Edit Category</a>
-                <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-outline btn-danger"
+                <a href="/admin/product/edit/{{$data->id}}" class="btn btn-outline btn-success">Edit Category</a>
+                <a href="/admin/product/destroy/{{$data->id}}" class="btn btn-outline btn-danger"
                    onclick="return confirm('Category will be deleting. Are you sure?')">Delete Category</a>
 
                 <h1 class="page-header">Show Category: {{$data->title}} </h1>
@@ -34,6 +34,10 @@
                     <td>{{$data->id}} </td>
                 </tr>
                 <tr>
+                    <th>Category</th>
+                    <td>{{$data->category_id}} </td>
+                </tr>
+                <tr>
                     <th>Title</th>
                     <td>{{$data->title}} </td>
 
@@ -43,8 +47,25 @@
                     <td>{{$data->keywords}} </td>
                 </tr>
                 <tr>
+                    <th>Description</th>
+                    <td>{{$data->description}} </td>
+                </tr>
+                <tr>
+                    <th>Detail</th>
+                    <td>{{$data->detail}} </td>
+
+                </tr>
+                <tr>
                     <th>Image</th>
-                    <td>{{$data->image}} </td>
+                      <td>  @if($data->image)
+                            <img src="{{Storage::url($data->image)}}" style="height: 40px">
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{$data->city}} </td>
+
                 </tr>
                 <tr>
                     <th>Status</th>
