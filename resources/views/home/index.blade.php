@@ -1,22 +1,10 @@
-<!-- resources/views/child.blade.php -->
-
 @extends('layouts.frontbase')
 
-@section('title', 'Laravel 9 Travel And Activity Group Website')
-
-@section('description')
-    Geziyoruz
-@endsection
-
-@section('keywords','Gezi, Aktivite, Travel, Görmek, Grup Gezisi, Planlama')
-
+@section('title', 'Travel and activity project')
 
 
 @section('content')
-@include('home._slider')
-
-
-
+    @include('home._slider')
     <!-- Features Start -->
     <div class="container-fluid py-5 py-lg-0 feature">
         <div class="row py-5 py-lg-0">
@@ -351,7 +339,7 @@
             <div class="col-lg-6 mb-4">
                 <div class="row mb-2 align-items-center">
                     <div class="col-6">
-                        <img class="img-thumbnail p-3" src="{{asset('assets')}}/img/team-4.jpg" alt="Image">
+                        <img class="img-thumbnail p-3" src="img/team-4.jpg" alt="Image">
                     </div>
                     <div class="col-6 text-left">
                         <h6>Officer Name</h6>
@@ -494,10 +482,4 @@
         </div>
     </div>
     <!-- Blog End -->
-
-
-
-
-
-
 @endsection

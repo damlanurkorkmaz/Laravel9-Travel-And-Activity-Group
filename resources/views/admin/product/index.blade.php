@@ -42,6 +42,7 @@
                             <th>Keywords</th>
                             <th>Detail</th>
                             <th>Image</th>
+                            <th>Image Gallery</th>
                             <th>City</th>
                             <th>Status</th>
                             <th style="width: 40 px">Edit</th>
@@ -57,11 +58,17 @@
                                 <td>{{$rs->title}}</td>
                                 <td>{{$rs->description}}</td>
                                 <td>{{$rs->keywords}}</td>
-                                <td>{{$rs->detail}}</td>
+                                <td>{!! $rs->detail !!}</td>
                                 <td>
                                     @if($rs->image)
-                                        <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                                        <img src="{{Storage::url($rs->image)}}" style="height: 50px">
                                     @endif
+                                </td>
+                                <td>
+                                    <a href="/admin/image/{{$rs->id}}"
+                                       onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                    <img src="{{asset('assets')}}/admin/img/gallery.png" width="50">
+                                    </a>
                                 </td>
                                 <td>{{$rs->city}}</td>
                                 <td>{{$rs->status}}</td>

@@ -1,3 +1,4 @@
+
 <!-- Footer Start -->
 <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="row pt-5">
@@ -75,8 +76,8 @@
 
 
 <!-- JavaScript Libraries -->
-<script src="{{asset('assets')}}/https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="{{asset('assets')}}/https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('assets')}}/lib/easing/easing.min.js"></script>
 <script src="{{asset('assets')}}/lib/waypoints/waypoints.min.js"></script>
 <script src="{{asset('assets')}}/lib/counterup/counterup.min.js"></script>

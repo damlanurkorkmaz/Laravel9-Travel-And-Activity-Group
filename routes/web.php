@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
@@ -68,6 +69,22 @@ Route::post('/admin/product/update/{id}', [AdminProductController::class,'update
 Route::get('/admin/product/destroy/{id}',  [AdminProductController::class,'destroy'])->name('admin_product_destroy');
 
 Route::get('/admin/product/show/{id}',  [AdminProductController::class,'show'])->name('admin_product_show');
+
+
+// admin image gallery  routes
+
+Route::get('/admin/image/{pid}', [ImageController::class,'index'])->name('admin_image');
+
+Route::post('/admin/image/store/{pid}', [ImageController::class,'store'])->name('admin_image_store');
+
+Route::post('/admin/image/update/{pid}/{id}', [ImageController::class,'update'])->name('admin_image_update');
+
+Route::get('/admin/image/destroy/{pid}/{id}',  [ImageController::class,'destroy'])->name('admin_image_destroy');
+
+// product detail route
+Route::get('/product/{id}', [HomeController::class,'product'])->name('product');
+
+
 
 
 // admin login
