@@ -60,8 +60,8 @@
                                 </div>
 <br>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect3">Status</label>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect3">Status</label>
                                     <select class="form-control form-control-sm" name="status">
                                         <option selected>{{$data->status}}</option>
                                         <option>True</option>

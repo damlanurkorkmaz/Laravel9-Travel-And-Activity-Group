@@ -25,12 +25,18 @@ Route::get('/', function () {
 
 Route::redirect('/anasayfa', '/home');
 
+//HOME ROUTES
 
-Route::get('/home', [HomeController::class, 'index']);
-Route::get('/test/{id}', [HomeController::class, 'test'])-> where ('id','[0-9]+');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+
+// Route::get('/test/{id}', [HomeController::class, 'test'])-> where ('id','[0-9]+');
 
 
-Route::get('/aboutus', [HomeController::class, 'aboutus'])-> name('aboutus');
+//Route::get('/aboutus', [HomeController::class, 'aboutus'])-> name('aboutus');
 
 
 // admin anasayfa
@@ -84,8 +90,11 @@ Route::get('/admin/image/destroy/{pid}/{id}',  [ImageController::class,'destroy'
 // product detail route
 Route::get('/product/{id}', [HomeController::class,'product'])->name('product');
 
+//General Routes
 
+Route::get('/admin/settings', [AdminHomeController::class, 'setting'])->name('admin_setting');
 
+Route::post('/admin/settings/update', [AdminHomeController::class, 'settingsUpdate'])->name('admin_settings_update');
 
 // admin login
 
