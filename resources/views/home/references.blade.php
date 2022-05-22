@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title','About Us',  $setting->title)
+@section('title','References',  $setting->title)
 @section('keywords',$setting->keywords )
 @section('description', $setting->description)
 @section('icon', Storage::url($setting->icon))
@@ -50,7 +50,7 @@
             <div class="col-lg-6 py-5 py-lg-0 px-3 px-lg-5">
                 <h5 class="text-primary mb-3">About Us</h5>
                 <h1 class="mb-4">15 Years Experience</h1>
-                <p>{!! $setting->aboutus!!}</p>
+                <p>{!! $setting->references!!}</p>
                 <div class="row py-2">
                     <div class="col-sm-6">
                         <i class="flaticon-approved display-3 text-primary"></i>

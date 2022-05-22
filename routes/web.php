@@ -33,6 +33,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
+Route::get('/references', [HomeController::class, 'references'])->name('references');
 // Route::get('/test/{id}', [HomeController::class, 'test'])-> where ('id','[0-9]+');
 
 

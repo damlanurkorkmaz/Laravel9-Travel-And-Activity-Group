@@ -36,12 +36,19 @@ class HomeController extends Controller
     }
     public function contact(){
 
-
-        echo "Contact Page";
-        exit();
-
         $setting=Setting::first();
         return view("home.contact",[
+            'setting'=>$setting,
+
+        ]);
+
+
+    }
+    public function references(){
+
+
+        $setting=Setting::first();
+        return view("home.references",[
             'setting'=>$setting,
 
         ]);
