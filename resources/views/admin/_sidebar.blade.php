@@ -56,7 +56,7 @@
                 <a href="/admin/users"><i class=" fa fa-user fa-fw"></i> Users</a>
             </li>
             <li>
-                <a href="/admin/message"><i class=" fa fa-comment fa-fw"></i> Messages</a>
+                <a href="/admin/message/"><i class=" fa fa-comment fa-fw"></i> Messages</a>
             </li>
             <li>
                 <a href="/admin/comment"><i class="fa fa-comments fa-fw"></i> Comments</a>

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\admin\FaqController;
 use App\Http\Controllers\admin\ImageController;
+use App\Http\Controllers\admin\MessageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
@@ -34,6 +36,13 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 Route::get('/references', [HomeController::class, 'references'])->name('references');
+
+Route::post('/storemessage', [HomeController::class, 'storeMessage'])->name('storeMessage');
+
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+
+
+
 // Route::get('/test/{id}', [HomeController::class, 'test'])-> where ('id','[0-9]+');
 
 
@@ -87,6 +96,32 @@ Route::post('/admin/image/store/{pid}', [ImageController::class,'store'])->name(
 Route::post('/admin/image/update/{pid}/{id}', [ImageController::class,'update'])->name('admin_image_update');
 
 Route::get('/admin/image/destroy/{pid}/{id}',  [ImageController::class,'destroy'])->name('admin_image_destroy');
+
+// admin message  routes
+
+Route::get('/admin/message/', [MessageController::class,'index'])->name('admin_message');
+
+Route::post('/admin/message/update/{id}', [MessageController::class,'update'])->name('admin_message_update');
+
+Route::get('/admin/message/destroy/{id}',  [MessageController::class,'destroy'])->name('admin_message_destroy');
+
+Route::get('/admin/message/show/{id}',  [MessageController::class,'show'])->name('admin_message_show');
+
+//admin  faq   routes
+Route::get('/admin/faq', [FaqController::class,'index'] )->name('admin_faq');
+
+Route::get('/admin/faq/create', [FaqController::class,'create'] )->name('admin_faq_create');
+
+Route::post('/admin/faq/store', [FaqController::class,'store'])->name('admin_faq_store');
+
+Route::get('/admin/faq/edit/{id}', [FaqController::class,'edit'])->name('admin_faq_edit');
+
+Route::post('/admin/faq/update/{id}', [FaqController::class,'update'])->name('admin_faq_update');
+
+Route::get('/admin/faq/destroy/{id}',  [FaqController::class,'destroy'])->name('admin_faq_destroy');
+
+Route::get('/admin/faq/show/{id}',  [FaqController::class,'show'])->name('admin_faq_show');
+
 
 // product detail route
 Route::get('/product/{id}', [HomeController::class,'product'])->name('product');

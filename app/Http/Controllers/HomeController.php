@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
+use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
@@ -41,7 +43,33 @@ class HomeController extends Controller
             'setting'=>$setting,
 
         ]);
+    }
 
+    public function faq(){
+
+        $setting=Setting::first();
+        $datalist=Faq::all();
+        return view("home.faq",[
+            'setting'=>$setting,
+            'datalist'=>$datalist
+
+        ]);
+    }
+
+    public function storeMessage(Request $request){
+
+        //dd($request);
+        $data= new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip = request()->ip();
+
+        $data->save();
+
+        return redirect()->route('contact')->with('info', 'Your message has been sent, Thank you.');
 
     }
     public function references(){
